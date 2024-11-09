@@ -1,0 +1,53 @@
+@import "../../styles.scss";
+
+.navbar {
+  background-color: $primaryColor;
+  height: 70px;
+}
+.navbar-expand-lg .navbar-collapse {
+  justify-content: space-between;
+}
+.navbar-brand {
+  color: $seconderyColor;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: -8px;
+}
+.bar-right li {
+  padding-right: 10px;
+}
+.bar-right .search-icon {
+  color: $seconderyColor;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.bar-right .search-icon:hover .search-bar {
+  top: 100px;
+}
+.search-box {
+  position: relative;
+}
+.search-box .search-bar {
+  background-color: #f3f0f0;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  transition: all 0.5s ease;
+  padding-left: 150px;
+}
+.search-box .search-bar.show {
+  top: 70px;
+  transition: all 0.5s ease;
+}
+.search-form {
+  width: 75%;
+  background-color: transparent;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.search-box .icon-form {
+  padding-right: 20px;
+}
