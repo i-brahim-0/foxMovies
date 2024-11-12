@@ -2,7 +2,7 @@
 
 .navbar {
   background-color: $primaryColor;
-  height: 70px;
+  min-height: 70px;
 }
 .navbar-expand-lg .navbar-collapse {
   justify-content: space-between;
@@ -40,6 +40,7 @@
 .search-box .search-bar.show {
   top: 70px;
   transition: all 0.5s ease;
+  // z-index: 9999;
 }
 .search-form {
   width: 75%;
@@ -51,3 +52,8 @@
 .search-box .icon-form {
   padding-right: 20px;
 }
+// .search-box[_ngcontent-ng-c2098240613] .search-bar.show[_ngcontent-ng-c2098240613] {
+//   top: 55px;
+//   z-index: 9999;
+//   padding-left: 55px;
+// }

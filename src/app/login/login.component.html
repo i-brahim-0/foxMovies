@@ -1,1 +1,73 @@
-<p>login works!</p>
+<form
+  class="login-form mb-5 w-50 m-auto"
+  [formGroup]="loginForm"
+  (ngSubmit)="submitLoginForm(loginForm)"
+>
+  <h4>Login to your account</h4>
+  <p>
+    Fill out the form below to get started. JavaScript is required to to
+    continue.
+  </p>
+  <div class="form-group">
+    <div class="user-name inpt">
+      <label for="user_name">UserName</label>
+      <input
+        formControlName="user_name"
+        type="text"
+        name=""
+        id="user_name"
+        class="form-control"
+        placeholder="enter your username"
+      />
+      <div
+        class="validation alert my-1 alert-danger"
+        *ngIf="
+          loginForm.get('user_name')?.errors != null &&
+          loginForm.get('user_name')?.touched
+        "
+      >
+        <p *ngIf="loginForm.get('user_name')?.errors?.['required']">
+          Username is required
+        </p>
+
+        <p *ngIf="loginForm.get('user_name')?.errors?.['minlength']">
+          Username is min length 6 letters
+        </p>
+      </div>
+    </div>
+    <div class="password inpt">
+      <label for="user_name">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        name=""
+        id="password"
+        class="form-control"
+        placeholder="enter your password"
+      />
+      <div
+        class="validation alert my-1 alert-danger"
+        *ngIf="
+          loginForm.get('password')?.errors != null &&
+          loginForm.get('password')?.touched
+        "
+      >
+        <p *ngIf="loginForm.get('password')?.errors?.['required']">
+          Password is required
+        </p>
+
+        <p *ngIf="loginForm.get('password')?.errors?.['minlength']">
+          Password is min length 6 letters
+        </p>
+      </div>
+    </div>
+  </div>
+  <button
+    [disabled]="loginForm.invalid"
+    class="btn btn-sign btn-secondary mx-2"
+    type="submit"
+  >
+    Login
+  </button>
+  <button class="btn btn-cancel btn-danger" routerLink="/home">Cancel</button>
+</form>
