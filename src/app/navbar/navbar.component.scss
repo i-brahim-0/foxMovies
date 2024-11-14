@@ -24,6 +24,9 @@
 .bar-right .search-icon:hover .search-bar {
   top: 100px;
 }
+.bar-right .logout {
+  cursor: pointer;
+}
 .search-box {
   position: relative;
 }
@@ -40,7 +43,7 @@
 .search-box .search-bar.show {
   top: 70px;
   transition: all 0.5s ease;
-  // z-index: 9999;
+  z-index: 9999;
 }
 .search-form {
   width: 75%;

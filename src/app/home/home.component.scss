@@ -1,0 +1,57 @@
+@import "../../styles.scss";
+.hero-sec {
+  height: 300px;
+  margin-top: -10px;
+  color: #fff;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-sec .overlay {
+  height: 100%;
+  z-index: 99999;
+  background-color: #0e00009c;
+}
+.hero-sec .welcom {
+  text-align: center;
+  margin-top: 60px;
+}
+.hero-sec .hero-content h2 {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 3rem;
+}
+.hero-sec .hero-content {
+  font-size: 1rem;
+}
+.hero-sec .search {
+  background-color: #fbfbfbdb;
+  border: solid 1px black;
+  margin: auto;
+  width: 96%;
+  border-radius: 25px;
+  height: 50px;
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  align-content: center;
+}
+.hero-sec .inpt {
+  background-color: transparent;
+  width: 90%;
+  border: none;
+  outline: none;
+  padding-left: 40px;
+}
+
+.hero-sec .btn-search {
+  background-color: $seconderyColor;
+  color: #fff;
+  border-radius: 30px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100px;
+}
