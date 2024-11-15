@@ -21,16 +21,37 @@
           </div>
         </div>
       </div>
-      <!-- <div class="search-box">
-        <div class="search-bar">
-          <i class="fa fa-search icon-form"></i>
-          <input
-            class="search-form fst-italic"
-            type="text"
-            placeholder="Search for a movie, tv show, person.... "
-          />
-        </div>
-      </div> -->
     </div>
+  </div>
+</section>
+<!-- Section Trending -->
+<section class="trinding-movies pt-3">
+  <div class="container">
+    <div class="header d-flex align-items-center">
+      <h2>Trending</h2>
+      <div class="time my-3 ms-2">
+        <button
+          [ngClass]="{
+            'active-btn': isBtnTodayActive,
+            'inActive-btn': !isBtnTodayActive
+          }"
+          (click)="toggelBtns(true)"
+          class="btn today"
+        >
+          Today
+        </button>
+        <button
+          [ngClass]="{
+            'active-btn': !isBtnTodayActive,
+            'inactive-btn': isBtnTodayActive
+          }"
+          (click)="toggelBtns(false)"
+          class="btn toweek"
+        >
+          This Week
+        </button>
+      </div>
+    </div>
+    <app-home-carousel [trendingMovies]="trendingMovies"></app-home-carousel>
   </div>
 </section>

@@ -1,4 +1,6 @@
 @import "../../styles.scss";
+
+// Hero Section
 .hero-sec {
   height: 300px;
   margin-top: -10px;
@@ -21,8 +23,8 @@
   letter-spacing: 2px;
   font-size: 3rem;
 }
-.hero-sec .hero-content {
-  font-size: 1rem;
+.hero-sec .hero-content p {
+  font-size: 1.5rem;
 }
 .hero-sec .search {
   background-color: #fbfbfbdb;
@@ -31,8 +33,8 @@
   width: 96%;
   border-radius: 25px;
   height: 50px;
-  position: absolute;
-  bottom: 60px;
+  position: relative;
+  bottom: -25px;
   left: 0;
   right: 0;
   align-content: center;
@@ -54,4 +56,32 @@
   bottom: 0;
   height: 50px;
   width: 100px;
+}
+// End Hero Section
+
+// Home Carousel
+.trinding-movies {
+  background-color: #ebe6e6;
+}
+.trinding-movies .time {
+  border: solid 1px black;
+  border-radius: 25px;
+}
+.trinding-movies .time button {
+  border-radius: 25px;
+}
+// .trinding-movies .time .today {
+//   background-color: $primaryColor;
+//   color: $tertiaryColor;
+// }
+.trinding-movies .time .inactive-btn {
+  background-color: #ebe6e6;
+  color: black;
+  border: none;
+}
+.trinding-movies .time .active-btn {
+  background-color: $primaryColor;
+  color: $tertiaryColor;
+  font-weight: bold;
+  border: 1px solid $tertiaryColor;
 }

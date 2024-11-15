@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +8,24 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   trendingMovies: any[] = [];
-  baseImgUrl = 'https://image.tmdb.org/t/p/original';
+  imgPrefix: string = 'https://image.tmdb.org/t/p/w500/';
   bgHero = '';
+  isBtnTodayActive: boolean = true;
+
   constructor(private _MoviesService: MoviesService) {
     this.getTrendingMovies();
     console.log(this.bgHero);
   }
   ngOnInit(): void {}
 
+  toggelBtns(isBtnClicked: boolean): void {
+    this.isBtnTodayActive = isBtnClicked;
+  }
+
   getTrendingMovies() {
     this._MoviesService.trendingMovies('movie/day?').subscribe((response) => {
       this.trendingMovies = response.results;
       this.bgHeroSecUrl();
-      console.log(response.results);
     });
   }
 
@@ -29,7 +33,7 @@ export class HomeComponent implements OnInit {
     let i = 1;
     this.bgHero =
       `url(` +
-      this.baseImgUrl +
+      this.imgPrefix +
       (this.trendingMovies[i].poster_path || '') +
       `)`;
     // console.log(this.bgHero);

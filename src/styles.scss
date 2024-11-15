@@ -1,3 +1,14 @@
+// @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+// @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
 $primaryColor: #0d253f;
 $seconderyColor: #01b4e4;
 $tertiaryColor: #90cea1;
+
+.owl-theme .owl-dots .owl-dot span {
+  background: $seconderyColor;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: $primaryColor;
+}
