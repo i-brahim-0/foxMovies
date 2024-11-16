@@ -1,11 +1,43 @@
-<owl-carousel-o [options]="customOptions">
-  <ng-container *ngFor="let movie of trendingMovies">
-    <ng-template carouselSlide [id]="movie.id">
-      <img
-        [src]="imgPrefix + movie.poster_path"
-        [alt]="movie.alt"
-        [title]="movie.title"
-      />
-    </ng-template>
-  </ng-container>
-</owl-carousel-o>
+<section class="carousel">
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let movie of trendingMovies">
+      <ng-template carouselSlide [id]="movie.id">
+        <img
+          [src]="imgPrefix + movie.poster_path"
+          [alt]="movie.alt"
+          [title]="movie.title"
+        />
+        <div class="after">
+          <div class="dropdown show">
+            <a
+              class="btn btn-secondary dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              ...
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+        <div class="befor"></div>
+        <div class="details text-start">
+          <div class="title">
+            <a href="#">{{ movie.title }}</a>
+          </div>
+          <div class="release-date">
+            <p>{{ movie.release_date }}</p>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</section>

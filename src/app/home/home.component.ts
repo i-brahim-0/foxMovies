@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private _MoviesService: MoviesService) {
     this.getTrendingMovies();
-    console.log(this.bgHero);
   }
   ngOnInit(): void {}
 
@@ -26,6 +25,7 @@ export class HomeComponent implements OnInit {
     this._MoviesService.trendingMovies('movie/day?').subscribe((response) => {
       this.trendingMovies = response.results;
       this.bgHeroSecUrl();
+      console.log(this.trendingMovies);
     });
   }
 

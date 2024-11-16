@@ -36,5 +36,6 @@ export class HomeCarouselComponent implements OnInit {
     // nav: true,
   };
   constructor() {}
+
   ngOnInit(): void {}
 }

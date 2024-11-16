@@ -5,6 +5,7 @@ $primaryColor: #0d253f;
 $seconderyColor: #01b4e4;
 $tertiaryColor: #90cea1;
 
+// Start Owl Carousel
 .owl-theme .owl-dots .owl-dot span {
   background: $seconderyColor;
 }
@@ -12,3 +13,11 @@ $tertiaryColor: #90cea1;
 .owl-theme .owl-dots .owl-dot:hover span {
   background: $primaryColor;
 }
+.owl-carousel.owl-drag .owl-item {
+  margin-right: 5px;
+}
+.owl-carousel .owl-stage-outer {
+  min-height: 290px;
+  // overflow: visible;
+}
+// End Owl Carousel
