@@ -8,13 +8,15 @@ $tertiaryColor: #90cea1;
 }
 .owl-carousel .owl-item img {
   border-radius: 10px;
+  height: 230px;
+  width: 95%;
 }
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
   background: $primaryColor;
 }
 .owl-carousel.owl-drag .owl-item {
-  margin-right: 5px;
+  // margin-right: 5px;
 }
 .owl-carousel .owl-stage-outer {
   height: 300px;

@@ -25,7 +25,9 @@
           </div>
         </div>
         <div class="befor text-center">
-          <p class="content">{{ movie.vote_average * 10 | number : "1." }}</p>
+          <p class="content">
+            {{ movie.vote_average * 10 | number : "1.0-0" }}
+          </p>
         </div>
         <div class="details text-start">
           <div class="title">
