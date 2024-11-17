@@ -10,6 +10,8 @@ export class HomeCarouselComponent implements OnInit {
   @Input() trendingMovies: any[] = [];
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500/';
 
+  dropdowen: boolean = false;
+
   customOptions: OwlOptions = {
     // autoWidth: true,
     loop: true,
@@ -38,4 +40,10 @@ export class HomeCarouselComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  showDropdowen(id: any) {
+    this.dropdowen = !this.dropdowen;
+    console.log(this.dropdowen);
+  }
+  toInteger() {}
 }

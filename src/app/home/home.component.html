@@ -24,7 +24,7 @@
     </div>
   </div>
 </section>
-<!-- Section Trending -->
+<!-- Start Section Trending -->
 <section class="trinding-movies pt-3">
   <div class="container">
     <div class="header d-flex align-items-center">
@@ -35,7 +35,7 @@
             'active-btn': isBtnTodayActive,
             'inActive-btn': !isBtnTodayActive
           }"
-          (click)="toggelBtns(true)"
+          (click)="toggelBtns(true); this.getTrendingMovies('day')"
           class="btn today"
         >
           Today
@@ -45,7 +45,7 @@
             'active-btn': !isBtnTodayActive,
             'inactive-btn': isBtnTodayActive
           }"
-          (click)="toggelBtns(false)"
+          (click)="toggelBtns(false); this.getTrendingMovies('week')"
           class="btn toweek"
         >
           This Week
@@ -55,3 +55,5 @@
     <app-home-carousel [trendingMovies]="trendingMovies"></app-home-carousel>
   </div>
 </section>
+<!-- End Section Trending -->
+<!-- Start Latest Trailers -->

@@ -1,6 +1,3 @@
-// @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
-// @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
-
 $primaryColor: #0d253f;
 $seconderyColor: #01b4e4;
 $tertiaryColor: #90cea1;
@@ -8,6 +5,9 @@ $tertiaryColor: #90cea1;
 // Start Owl Carousel
 .owl-theme .owl-dots .owl-dot span {
   background: $seconderyColor;
+}
+.owl-carousel .owl-item img {
+  border-radius: 10px;
 }
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
@@ -17,7 +17,7 @@ $tertiaryColor: #90cea1;
   margin-right: 5px;
 }
 .owl-carousel .owl-stage-outer {
-  min-height: 290px;
+  height: 300px;
   // overflow: visible;
 }
 // End Owl Carousel

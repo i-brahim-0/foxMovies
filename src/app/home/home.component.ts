@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   isBtnTodayActive: boolean = true;
 
   constructor(private _MoviesService: MoviesService) {
-    this.getTrendingMovies();
+    this.getTrendingMovies('day');
   }
   ngOnInit(): void {}
 
@@ -21,12 +21,14 @@ export class HomeComponent implements OnInit {
     this.isBtnTodayActive = isBtnClicked;
   }
 
-  getTrendingMovies() {
-    this._MoviesService.trendingMovies('movie/day?').subscribe((response) => {
-      this.trendingMovies = response.results;
-      this.bgHeroSecUrl();
-      console.log(this.trendingMovies);
-    });
+  getTrendingMovies(timeFrame: string) {
+    this._MoviesService
+      .trendingMovies('movie', timeFrame)
+      .subscribe((response) => {
+        this.trendingMovies = response.results;
+        this.bgHeroSecUrl();
+        console.log(this.trendingMovies);
+      });
   }
 
   bgHeroSecUrl() {

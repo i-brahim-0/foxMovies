@@ -13,9 +13,9 @@ export class MoviesService implements OnInit {
 
   constructor(private _HttpClient: HttpClient) {}
   ngOnInit(): void {}
-  trendingMovies(dataType: string): Observable<any> {
+  trendingMovies(dataType: string, timeFrame: string): Observable<any> {
     return this._HttpClient.get(
-      `${this.basePath}trending/${dataType}${this.apiKey}`
+      `${this.basePath}trending/${dataType}/${timeFrame}?${this.apiKey}`
     );
   }
 }
