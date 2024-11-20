@@ -28,24 +28,24 @@
 <section class="trinding-movies pt-3">
   <div class="container">
     <div class="header d-flex align-items-center">
-      <h2>Trending</h2>
+      <h2>Trending Movies</h2>
       <div class="time my-3 ms-2">
         <button
           [ngClass]="{
-            'active-btn': isBtnTodayActive,
-            'inActive-btn': !isBtnTodayActive
+            'active-btn': isBtnMovieActive,
+            'inActive-btn': !isBtnMovieActive
           }"
-          (click)="toggelBtns(true); this.getTrendingMovies('day')"
+          (click)="toggelMovieBtns(true); this.getTrendingMovies('day')"
           class="btn today"
         >
           Today
         </button>
         <button
           [ngClass]="{
-            'active-btn': !isBtnTodayActive,
-            'inactive-btn': isBtnTodayActive
+            'active-btn': !isBtnMovieActive,
+            'inactive-btn': isBtnMovieActive
           }"
-          (click)="toggelBtns(false); this.getTrendingMovies('week')"
+          (click)="toggelMovieBtns(false); this.getTrendingMovies('week')"
           class="btn toweek"
         >
           This Week
@@ -55,5 +55,157 @@
     <app-home-carousel [trendingMovies]="trendingMovies"></app-home-carousel>
   </div>
 </section>
-<!-- End Section Trending -->
-<!-- Start Latest Trailers -->
+<!-- End Section Trending Movies -->
+<!-- Start Trending Tv -->
+<section class="trending-tv pt-3">
+  <div class="overlay">
+    <div class="container">
+      <div class="header d-flex align-items-center">
+        <h2>Trending TV</h2>
+        <div class="time my-3 ms-2">
+          <button
+            [ngClass]="{
+              'active-btn': isBtnTvActive,
+              'inActive-btn': !isBtnTvActive
+            }"
+            (click)="toggelTvBtns(true); this.getTrendingTv('day')"
+            class="btn today"
+          >
+            Today
+          </button>
+          <button
+            [ngClass]="{
+              'active-btn': !isBtnTvActive,
+              'inactive-btn': isBtnTvActive
+            }"
+            (click)="toggelTvBtns(false); this.getTrendingTv('week')"
+            class="btn toweek"
+          >
+            This Week
+          </button>
+        </div>
+      </div>
+      <!-- start carousel -->
+      <div class="owl-carousel-tv">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let tv of trendingTV">
+            <ng-template carouselSlide [id]="tv.id">
+              <img
+                [src]="imgPrefix + tv.poster_path"
+                [alt]="tv.alt"
+                [title]="tv.name"
+              />
+              <div class="after show-item-option">
+                <div class="dropdown show">
+                  <a
+                    class="btn btn-secondary dropdown-toggle"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    ...
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </div>
+                </div>
+              </div>
+              <div class="befor text-center">
+                <p class="content">
+                  {{ tv.vote_average * 10 | number : "1.0-0" }}
+                </p>
+              </div>
+              <div class="details text-start">
+                <div class="title">
+                  <a href="#">{{ tv.name }}</a>
+                </div>
+                <div class="release-date">
+                  <p>{{ tv.first_air_date }}</p>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Trending Tv -->
+<!-- Start Trending People -->
+<section class="trending-people pt-3">
+  <div class="overlay">
+    <div class="container">
+      <div class="header d-flex align-items-center">
+        <h2>Trending Person</h2>
+        <div class="time my-3 ms-2">
+          <button
+            [ngClass]="{
+              'active-btn': isBtnPeopleActive,
+              'inActive-btn': !isBtnPeopleActive
+            }"
+            (click)="toggelPeopleBtns(true); this.getTrendingPeople('day')"
+            class="btn today"
+          >
+            Today
+          </button>
+          <button
+            [ngClass]="{
+              'active-btn': !isBtnPeopleActive,
+              'inactive-btn': isBtnPeopleActive
+            }"
+            (click)="toggelPeopleBtns(false); this.getTrendingPeople('week')"
+            class="btn toweek"
+          >
+            This Week
+          </button>
+        </div>
+      </div>
+      <!-- start carousel -->
+      <div class="owl-carousel-people">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let people of trendingPeople">
+            <ng-template carouselSlide [id]="people.id">
+              <img
+                [src]="imgPrefix + people.profile_path"
+                [alt]="people.alt"
+                [title]="people.name"
+              />
+              <div class="after show-item-option">
+                <div class="dropdown show">
+                  <a
+                    class="btn btn-secondary dropdown-toggle"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    ...
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </div>
+                </div>
+              </div>
+              <div class="befor text-center">
+                <p class="content">
+                  {{ people.popularity * 10 | number : "1.0-0" }}
+                </p>
+              </div>
+              <div class="details text-start">
+                <div class="title">
+                  <a href="#">{{ people.name }}</a>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Trending People -->

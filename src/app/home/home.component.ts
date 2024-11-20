@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +9,55 @@ import { MoviesService } from '../services/movies.service';
 })
 export class HomeComponent implements OnInit {
   trendingMovies: any[] = [];
+  trendingTV: any[] = [];
+  trendingPeople: any[] = [];
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500/';
   bgHero = '';
-  isBtnTodayActive: boolean = true;
+  isBtnMovieActive: boolean = true;
+  isBtnTvActive: boolean = true;
+  isBtnPeopleActive: boolean = true;
+
+  customOptions: OwlOptions = {
+    // autoWidth: true,
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 700,
+    navText: ['<', '>'],
+    responsive: {
+      0: {
+        items: 2,
+      },
+      400: {
+        items: 4,
+      },
+      740: {
+        items: 6,
+      },
+      940: {
+        items: 8,
+      },
+    },
+    // nav: true,
+  };
 
   constructor(private _MoviesService: MoviesService) {
     this.getTrendingMovies('day');
+    this.getTrendingTv('day');
+    this.getTrendingPeople('day');
   }
   ngOnInit(): void {}
 
-  toggelBtns(isBtnClicked: boolean): void {
-    this.isBtnTodayActive = isBtnClicked;
+  toggelMovieBtns(isBtnClicked: boolean): void {
+    this.isBtnMovieActive = isBtnClicked;
+  }
+  toggelTvBtns(isBtnClicked: boolean): void {
+    this.isBtnTvActive = isBtnClicked;
+  }
+  toggelPeopleBtns(isBtnClicked: boolean): void {
+    this.isBtnPeopleActive = isBtnClicked;
   }
 
   getTrendingMovies(timeFrame: string) {
@@ -28,6 +67,22 @@ export class HomeComponent implements OnInit {
         this.trendingMovies = response.results;
         this.bgHeroSecUrl();
         console.log(this.trendingMovies);
+      });
+  }
+  getTrendingTv(timeFrame: string) {
+    this._MoviesService
+      .trendingMovies('tv', timeFrame)
+      .subscribe((response) => {
+        this.trendingTV = response.results;
+        console.log(this.trendingTV);
+      });
+  }
+  getTrendingPeople(timeFrame: string) {
+    this._MoviesService
+      .trendingMovies('person', timeFrame)
+      .subscribe((response) => {
+        this.trendingPeople = response.results;
+        console.log(this.trendingPeople);
       });
   }
 

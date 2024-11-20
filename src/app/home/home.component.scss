@@ -65,7 +65,7 @@
 
 // Home Carousel
 .trinding-movies {
-  background-color: #ebe6e6;
+  background-color: #fff;
 }
 .trinding-movies .time {
   border: solid 1px black;
@@ -80,6 +80,267 @@
   border: none;
 }
 .trinding-movies .time .active-btn {
+  background-color: $primaryColor;
+  color: $tertiaryColor;
+  font-weight: bold;
+  border: 1px solid $tertiaryColor;
+}
+
+// Start Carousel tv
+.trending-tv {
+  background-color: #e7e6e6;
+}
+.trending-tv .after .dropdown-toggle::after {
+  content: none;
+}
+.trending-tv .befor {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 4px solid #2caf50;
+  background-color: $primaryColor;
+  color: white;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+}
+.trending-tv .befor p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+.trending-tv .after .dropdown-toggle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 8px;
+}
+.dropup,
+.dropend,
+.dropdown,
+.dropstart,
+.dropup-center,
+.dropdown-center {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
+.trending-tv .details {
+  margin-top: 20px;
+}
+.trending-tv .details .title {
+  height: 20px;
+  overflow: hidden;
+}
+.trending-tv .details .title a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+.trending-tv .details .title a:hover {
+  color: $seconderyColor;
+}
+.trending-tv .details .release-date p {
+  font-size: 14px;
+  color: #41464b;
+}
+//
+.trending-tv .befor {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 4px solid #2caf50;
+  background-color: $primaryColor;
+  color: white;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+}
+.trending-tv .befor p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+.trending-tv .after .dropdown-toggle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 8px;
+}
+.dropup,
+.dropend,
+.dropdown,
+.dropstart,
+.dropup-center,
+.dropdown-center {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
+.trending-tv .details {
+  margin-top: 20px;
+}
+.trending-tv .details .title {
+  height: 20px;
+  overflow: hidden;
+}
+.trending-tv .details .title a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+.trending-tv .details .title a:hover {
+  color: $seconderyColor;
+}
+.trending-tv .details .release-date p {
+  font-size: 14px;
+  color: #41464b;
+}
+
+.trending-tv .time {
+  border: solid 1px black;
+  border-radius: 25px;
+}
+.trending-tv .time button {
+  border-radius: 25px;
+}
+.trending-tv .time .inactive-btn {
+  background-color: #ebe6e6;
+  color: black;
+  border: none;
+}
+.trending-tv .time .active-btn {
+  background-color: $primaryColor;
+  color: $tertiaryColor;
+  font-weight: bold;
+  border: 1px solid $tertiaryColor;
+}
+// End Carousel tv
+
+// start person
+.trending-people {
+  background-color: #fff;
+}
+.trending-people .after .dropdown-toggle::after {
+  content: none;
+}
+.trending-people .befor {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 4px solid #2caf50;
+  background-color: $primaryColor;
+  color: white;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+}
+.trending-people .befor p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+.trending-people .after .dropdown-toggle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 8px;
+}
+.dropup,
+.dropend,
+.dropdown,
+.dropstart,
+.dropup-center,
+.dropdown-center {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
+.trending-people .details {
+  margin-top: 20px;
+}
+.trending-people .details .title {
+  height: 20px;
+  overflow: hidden;
+}
+.trending-people .details .title a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+.trending-people .details .title a:hover {
+  color: $seconderyColor;
+}
+.trending-people .details .release-date p {
+  font-size: 14px;
+  color: #41464b;
+}
+//
+.trending-people .befor {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 4px solid #2caf50;
+  background-color: $primaryColor;
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+.trending-people .befor p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+.trending-people .after .dropdown-toggle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 8px;
+}
+.dropup,
+.dropend,
+.dropdown,
+.dropstart,
+.dropup-center,
+.dropdown-center {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
+.trending-people .details {
+  margin-top: 20px;
+}
+.trending-people .details .title {
+  height: 20px;
+  overflow: hidden;
+}
+.trending-people .details .title a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+.trending-people .details .title a:hover {
+  color: $seconderyColor;
+}
+.trending-people .details .release-date p {
+  font-size: 14px;
+  color: #41464b;
+}
+
+.trending-people .time {
+  border: solid 1px black;
+  border-radius: 25px;
+}
+.trending-people .time button {
+  border-radius: 25px;
+}
+.trending-people .time .inactive-btn {
+  background-color: #ebe6e6;
+  color: black;
+  border: none;
+}
+.trending-people .time .active-btn {
   background-color: $primaryColor;
   color: $tertiaryColor;
   font-weight: bold;

@@ -1,1 +1,46 @@
-<p>movies works!</p>
+<div class="movies">
+  <div class="container">
+    <div class="row">
+      <div
+        class="card-movie col col-md-2 col-sm-3"
+        *ngFor="let movie of nowPlaying"
+      >
+        <img
+          [src]="imgPrefix + movie.poster_path"
+          [alt]="movie.alt"
+          [title]="movie.title"
+        />
+        <div class="after show-item-option">
+          <div class="dropdown show">
+            <a
+              class="btn btn-secondary dropdown-toggle"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              ...
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+            </div>
+          </div>
+        </div>
+        <div class="befor text-center">
+          <p class="content">
+            {{ movie.vote_average * 10 | number : "1.0-0" }}
+          </p>
+        </div>
+        <div class="details text-start">
+          <div class="title">
+            <a href="#">{{ movie.title }}</a>
+          </div>
+          <div class="release-date">
+            <p>{{ movie.release_date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
