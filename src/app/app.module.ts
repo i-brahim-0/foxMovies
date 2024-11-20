@@ -18,6 +18,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
     BrowserAnimationsModule,
     RouterModule,
     CarouselModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
