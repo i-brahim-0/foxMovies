@@ -19,7 +19,8 @@
 .movies img {
   width: 100%;
   height: 280px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .movies .after .dropdown-toggle::after {
   content: none;
@@ -75,4 +76,25 @@
 .movies .details .release-date p {
   font-size: 14px;
   color: #41464b;
+}
+.movies .title-side,
+.sidebar {
+  padding-left: 3rem;
+}
+//
+.movies .sidebar {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.movies .sidebar h5 {
+  margin-bottom: 10px;
+}
+.movies .custom-select {
+  margin-bottom: 20px;
+}
+.movies .btn-search {
+  display: block;
+  width: 100%;
 }

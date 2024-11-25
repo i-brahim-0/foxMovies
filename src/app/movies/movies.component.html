@@ -1,46 +1,84 @@
 <div class="movies">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div
-        class="card-movie col col-lg-2 col-md-4 col-sm-6"
-        *ngFor="let movie of nowPlaying"
-      >
-        <div style="position: relative">
-          <img
-            class="img-fluid"
-            [src]="imgPrefix + movie.poster_path"
-            [alt]="movie.alt"
-            [title]="movie.title"
-          />
-          <div class="after show-item-option">
-            <div class="dropdown show">
-              <a
-                class="btn btn-secondary dropdown-toggle"
-                role="button"
-                id="dropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                ...
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
+      <h4 class="title-side">Now Playing Movies</h4>
+      <div class="col col-md-3 col-sm-4 vh-100 sidebar">
+        <!-- <ul class="nav flex-column">
+          <li class="nav-item">hhhhh</li>
+          <li class="nav-item">hhhhh</li>
+          <li class="nav-item">hhhhh</li>
+        </ul> -->
+        <div class="sidebar">
+          <h5>Sort</h5>
+          <select class="form-select custom-select">
+            <option value="popularity-descending" selected>
+              Popularity Descending
+            </option>
+            <option value="popularity-ascending">Popularity Ascending</option>
+            <option value="rating-descending">Rating Descending</option>
+            <option value="rating-ascending">Rating Ascending</option>
+          </select>
+
+          <h5>Where To Watch</h5>
+          <select class="form-select custom-select">
+            <option value="popularity-descending" selected>YouTube</option>
+            <option value="popularity-ascending">Watch It</option>
+            <option value="rating-descending">Netflex</option>
+          </select>
+
+          <h5>Filters</h5>
+          <button class="btn btn-outline-secondary custom-select w-100">
+            Apply Filters
+          </button>
+
+          <button class="btn btn-primary btn-search mt-3">Search</button>
+        </div>
+        <!--  -->
+      </div>
+      <div class="col col-md-9 col-sm-8 p-3">
+        <div class="row g-3">
+          <div
+            class="card-movie col col-lg-2 col-md-3 col-sm-9"
+            *ngFor="let movie of nowPlaying"
+          >
+            <div style="position: relative">
+              <img
+                class="img-fluid"
+                [src]="imgPrefix + movie.poster_path"
+                [alt]="movie.alt"
+                [title]="movie.title"
+              />
+              <div class="after show-item-option">
+                <div class="dropdown show">
+                  <a
+                    class="btn btn-secondary dropdown-toggle"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    ...
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                  </div>
+                </div>
+              </div>
+              <div class="befor text-center">
+                <p class="content">
+                  {{ movie.vote_average * 10 | number : "1.0-0" }}
+                </p>
               </div>
             </div>
-          </div>
-          <div class="befor text-center">
-            <p class="content">
-              {{ movie.vote_average * 10 | number : "1.0-0" }}
-            </p>
-          </div>
-        </div>
-        <div class="details text-start">
-          <div class="title">
-            <a href="#">{{ movie.title }}</a>
-          </div>
-          <div class="release-date">
-            <p>{{ movie.release_date }}</p>
+            <div class="details text-start">
+              <div class="title">
+                <a href="#">{{ movie.title }}</a>
+              </div>
+              <div class="release-date">
+                <p>{{ movie.release_date }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

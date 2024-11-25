@@ -66,7 +66,6 @@ export class HomeComponent implements OnInit {
       .subscribe((response) => {
         this.trendingMovies = response.results;
         this.bgHeroSecUrl();
-        console.log(this.trendingMovies);
       });
   }
   getTrendingTv(timeFrame: string) {
@@ -74,7 +73,6 @@ export class HomeComponent implements OnInit {
       .trendingMovies('tv', timeFrame)
       .subscribe((response) => {
         this.trendingTV = response.results;
-        console.log(this.trendingTV);
       });
   }
   getTrendingPeople(timeFrame: string) {
@@ -82,7 +80,6 @@ export class HomeComponent implements OnInit {
       .trendingMovies('person', timeFrame)
       .subscribe((response) => {
         this.trendingPeople = response.results;
-        console.log(this.trendingPeople);
       });
   }
 
@@ -93,6 +90,5 @@ export class HomeComponent implements OnInit {
       this.imgPrefix +
       (this.trendingMovies[i].poster_path || '') +
       `)`;
-    // console.log(this.bgHero);
   }
 }

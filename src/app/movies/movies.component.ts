@@ -20,7 +20,6 @@ export class MoviesComponent implements OnInit {
       .nowPlayingMovies('movie', timeFrame)
       .subscribe((response) => {
         this.nowPlaying = response.results;
-        console.log(this.nowPlaying);
       });
   }
 }
